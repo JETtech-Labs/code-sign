@@ -34,7 +34,7 @@ sbverify --cert cert.pem  signed.bin
 ## Secure Boot helpful hints
 As of 2025 Microsoft requires using Extend Validation (EV) certs for SHIM bootloader. EV Certs must be stored on a FIPS 140-2 HSM or Token. Secure Boot does NOT support ECDSA signing by default and RSA-2048 EV certs are no longer supported (require RSA-3072+). As of April 2025 Yubikey does not (yet) have a FIPS certified token that supports storing RSA-3072+ - so it is necessary to use SafeNet eTokens which supports FIPS 140-2 storage of RSA-3072+ keys.
 
-There was no way to sign images from an ubuntu 22.04 environment without modifying packages. In order to sign SecureBoot binaries with FIPS 140-2 tokens in a future proof was - we made this container environmnet to help. 
+There was no way to sign images from an ubuntu 22.04 environment without modifying packages. In order to sign SecureBoot binaries with FIPS 140-2 tokens in a future proof way (using OpenSSL v3.X+) - we made this container environmnet to help. 
 
 ## Details
 The shell script will build and launch the container allowing for code signing. 
