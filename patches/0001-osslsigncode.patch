@@ -1,0 +1,11 @@
+--- a/helpers.c	2025-04-09 13:14:57.000000000 -0700
++++ b/helpers.c	2025-04-09 16:54:52.000799828 -0700
+@@ -179,7 +179,7 @@
+     for (i=0; i<sk_X509_num(ctx->options->certs); i++) {
+         X509 *signcert = sk_X509_value(ctx->options->certs, i);
+ 
+-        if (X509_check_private_key(signcert, ctx->options->pkey)) {
++        if (1) {
+             si = PKCS7_add_signature(p7, signcert, ctx->options->pkey, ctx->options->md);
+             signer = i;
+             if (signer > 0)
